@@ -17,6 +17,11 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         String searchAgain = "yes";
 
+        System.out.println("\nAvailable products:");
+        for (String key : inventory.keySet()) {
+            System.out.println("- " + key);
+        }
+
         while (searchAgain.equalsIgnoreCase("yes")) {
             System.out.print("\nEnter a product name to search: ");
             String search = keyboard.nextLine().trim();
