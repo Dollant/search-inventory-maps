@@ -24,7 +24,7 @@ public class Main {
             Product found = inventory.get(search);
 
             if (found != null) {
-                System.out.printf("Found! ^_^ | ID: %d | Name: %s | Price: $%.2f%n",
+                System.out.printf("Found! ^_^ - ID: %d | Name: %s | Price: $%.2f%n",
                         found.getProductID(),
                         found.getName(),
                         found.getPrice());
@@ -45,5 +45,29 @@ public class Main {
 
         String fileName = "src/main/resources/inventory.csv";
 
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
+
+                String[] tokens = line.split("\\|");
+
+                int productID = Integer.parseInt(tokens[0].trim());
+                String name = tokens[1].trim();
+                double price = Double.parseDouble(tokens[2].trim());
+
+                Product product = new Product(productID, name, price);
+
+                inventory.put(name, product);
+            }
+
+            reader.close();
+            System.out.println("Inventory loaded. " +inventory.size() + " products found!");
+
+        } catch (IOException e) {
+            System.out.println("Could not load inventory: " + e.getMessage());
+        }
     }
 }
