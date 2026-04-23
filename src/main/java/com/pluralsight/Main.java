@@ -12,6 +12,15 @@ public class Main {
 
     public static void main(String[] args) {
 
+        loadInventory();
+
+        Scanner keyboard = new Scanner(System.in);
+        String searchAgain = "yes";
+
+        while (searchAgain.equalsIgnoreCase("yes")) {
+            System.out.print("\nEnter a product name to search: ");
+            String search = keyboard.nextLine().trim();
+        }
 
     }
 }
