@@ -28,7 +28,16 @@ public class Main {
                         found.getProductID(),
                         found.getName(),
                         found.getPrice());
+            } else {
+
+                System.out.println("Product not found: " + search);
             }
+
+            System.out.print("\nDo you want to search again? :) | (yes/no): ");
+            searchAgain = keyboard.nextLine().trim();
         }
+
+        System.out.println("Goodbye! ^v^");
+        keyboard.close();
     }
 }
