@@ -7,4 +7,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+
+    static HashMap<String, Product> inventory = new HashMap<>();
+
+    public static void main(String[] args) {
+
+
+    }
 }
