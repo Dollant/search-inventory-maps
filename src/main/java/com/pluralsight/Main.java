@@ -40,4 +40,10 @@ public class Main {
         System.out.println("Goodbye! ^v^");
         keyboard.close();
     }
+
+    public static void loadInventory() {
+
+        String fileName = "src/main/resources/inventory.csv";
+
+    }
 }
