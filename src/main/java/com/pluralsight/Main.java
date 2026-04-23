@@ -20,7 +20,15 @@ public class Main {
         while (searchAgain.equalsIgnoreCase("yes")) {
             System.out.print("\nEnter a product name to search: ");
             String search = keyboard.nextLine().trim();
-        }
 
+            Product found = inventory.get(search);
+
+            if (found != null) {
+                System.out.printf("Found! ^_^ | ID: %d | Name: %s | Price: $%.2f%n",
+                        found.getProductID(),
+                        found.getName(),
+                        found.getPrice());
+            }
+        }
     }
 }
